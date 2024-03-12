@@ -1,0 +1,18 @@
+<div class="w-25 d-flex">
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="plusVal"
+    placeholder="Enter Value to Add in Old"
+  />
+  <button class="btn btn-primary w-50 ms-1" (click)="addPlus()">
+    Add To Old
+  </button>
+</div>
+
+<div class="mt-3">
+  <h3>{{ chennal }}</h3>
+  <button class="btn btn-primary" (click)="modifyChennal()">
+    Modify Chennal
+  </button>
+</div>

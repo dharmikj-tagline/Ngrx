@@ -1,0 +1,11 @@
+<h3 class="text-center text-danger fw-bold">Post Detail</h3>
+
+<ng-container *ngIf="postDetail && (postDetail | async) as postDetail">
+    <div class="m-4 w-25 border rounded">
+        <h6>Id : {{ postDetail.id }}</h6>
+        <hr>
+        <h6>Title : {{ postDetail.title }}</h6>
+        <hr>
+        <h6>Desc : {{ postDetail.description }}</h6>
+    </div>
+</ng-container>

@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+  <div class="container-fluid">
+    <a class="navbar-brand text-danger fw-bold fs-3">NgRx</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <ng-container *ngFor="let router of routerLink">
+          <li class="nav-item mx-2">
+            <a class="nav-link" [routerLink]="router.link" routerLinkActive="active">{{ router.label }}
+            </a>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+  <ng-container *ngIf="isAuthenticated | async">
+    <button class="btn btn-danger"> Logout </button>
+  </ng-container>
+</nav>
+
+<ng-container *ngIf="urlRoute | async as routeData">
+  <div class="row ms-0">
+    <ng-container *ngFor="let info of ['URL', 'QueryParams', 'Params']; let i = index">
+      <div class="col md-4 border border-secondary p-3 bg-aliceblue">
+        <span class="text-danger fw-bold"> {{ info }} : </span>
+        {{ routeData[i === 0 ? 'url' : (i === 1 ? 'queryParams' : 'params')] | json }}
+      </div>
+    </ng-container>
+  </div>
+</ng-container>

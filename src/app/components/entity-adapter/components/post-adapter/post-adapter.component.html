@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <button class="btn btn-primary" (click)="navigate()">Move to Multiple Entity =></button>
+
+    <h4 class="text-danger text-center fw-bold">API Post Data with Adapter</h4>
+    <hr>
+    <div>
+        <table class="table table-striped">
+            <thead class="thead-dark mt-3">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">TITLE</th>
+                    <th scope="col">DESCRIPTION</th>
+                    <th scope="col">ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let post of apiPostLists | async; let i = index">
+                    <tr>
+                        <td>{{ post.id }}</td>
+                        <td>{{ post.title }}</td>
+                        <td>{{ post.body }}</td>
+                        <td>
+                            <button class="btn btn-info" (click)="viewDetail(post.id)"> VIEW </button>
+                        </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>

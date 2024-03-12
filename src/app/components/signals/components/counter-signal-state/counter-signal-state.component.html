@@ -1,0 +1,11 @@
+<div class="mt-5">
+    <h6 class="fw-bold">SIGNAL STATE</h6>
+    <div class="card p-4">
+        <h6 class="fw-bold">Count : {{ state.count() }}</h6>
+        <hr>
+        <div class="d-flex">
+            <button class="btn btn-primary" (click)="increase()">INCREACE</button>
+            <button class="btn btn-danger ms-4" (click)="decrease()">DECREASE</button>
+        </div>
+    </div>
+</div>

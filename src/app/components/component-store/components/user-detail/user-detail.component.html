@@ -1,0 +1,18 @@
+<h3 class="text-danger fw-bold text-center">USER DETAIL</h3>
+<ng-container *ngIf="(userDetail | async)?.userDetail as user">
+    <div class="m-5 card p-3 bordered w-25">
+        <h6>ID -: {{user.id}}</h6>
+        <hr>
+        <h6>NAME -: {{user.name}}</h6>
+        <hr>
+        <h6>PHONE -: {{user.phone}}</h6>
+        <hr>
+        <h6>USERNAME -: {{user.username}}</h6>
+        <hr>
+        <h6>WEBSITE -: {{user.website}}</h6>
+        <hr>
+        <h6>ADDRESS -: {{user.address?.suite}}-> {{user.address?.street}}-> {{user.address?.city}}</h6>
+        <hr>
+        <h6>COMPANY NAME -: {{user.company?.name}}</h6>
+    </div>
+</ng-container>

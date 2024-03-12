@@ -1,0 +1,29 @@
+<h3 class="text-center text-danger fw-bold">MULTIPLE ADAPTER</h3>
+
+<hr>
+<div class="container">
+    <div>
+        <table class="table table-striped">
+            <thead class="thead-dark mt-3">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">COUNTRY</th>
+                    <th scope="col">TEAM NAME</th>
+                    <th scope="col">TEAM SHORT NAME</th>
+                    <th scope="col">IMAGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let post of teamList$ | async; let i = index">
+                    <tr>
+                        <td>{{ post?.id }}</td>
+                        <td>{{ post?.countryName || '--' }}</td>
+                        <td>{{ post?.teamName || '--' }}</td>
+                        <td>{{ post?.teamSName || '--' }}</td>
+                        <td>{{ post?.imageId || '--' }}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>
